@@ -7,10 +7,12 @@ window.onload=function(){
 	}
 	var guandao=[
 		{
-		top:{x:300,y:0,w:80,h:300},
-		bottom:{x:300,y:450,w:80,h:300}
+			top:{x:300,y:0,w:80,h:300},
+			bottom:{x:300,y:450,w:80,h:300}
 		},
-		{top:{x:600,y:0,w:80,h:300},bottom:{x:600,y:450,w:80,h:300,}
+		{	
+			top:{x:600,y:0,w:80,h:300},
+			bottom:{x:600,y:450,w:80,h:300,}
 	    }
 	];
 	var ctx=document.querySelector("#canvas").getContext("2d");
@@ -53,18 +55,15 @@ window.onload=function(){
 		if(d.top.x<=-d.top.w){
 			d.top.x=500;
 			d.bottom.x=500;
-            
             d.top.h=Math.random()*390+10;
             d.bottom.h=568-d.top.h-160;
             d.bottom.y=d.top.h+160;
-			
 		}
 		if(vs){
 			btn2.style.display="block";
 			return;
 		}
 		}
-		
 		//边界判断
 		if(bird.y>=568-40){
 			ctx.fillRect(140,568,bird.w,bird.h);
@@ -108,12 +107,5 @@ var recvsrec =  function(rect0,rect1){
     }
     return true;
   };
-	
-	
-	
-    
-	
-	
-
 	
 }
